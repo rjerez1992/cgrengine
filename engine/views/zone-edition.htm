@@ -1,0 +1,40 @@
+<div class="container d-flex h-100">
+    <div class="row flex-grow-1 justify-content-center align-self-center">
+        <div class="col-12 offset-0 align-items-center align-content-center align-self-center">
+            <h2>{{zone.Name}}<button go-click="/zoneselection" class="btn btn-primary pull-left button-right-space" type="button"><i class="fa fa-chevron-left"></i></button><button class="btn btn-danger pull-right" type="button"><i class="fa fa-times"></i>&nbsp;Delete&nbsp;&nbsp;</button></h2>
+            <h6 class="text-primary">{{zone.ZoneId}}</h6>
+            <div class="max-heigh-w-scroll">                
+                <div class="card space-bottom-20px">
+                    <div class="card-body">                        
+                        <h4 class="text-primary card-title">Zone layout ({{zone.Size}})</h4>
+                        <h6 class="text-primary card-subtitle mb-2" style="margin-bottom: 15px !important;">Click on empty to create. Click on created map to edit.</h6>
+                        <div class="max-heigh-width-w-scroll">
+                            <div ng-repeat="row in zone.Maps" class="row no-gutters justify-content-center flex-nowrap">
+                            	<div ng-repeat="map in row track by $index">
+                            		<button ng-if="map" ng-click="editMap(map)" class="btn btn-success button-map-size" type="button" style="overflow: hidden;text-overflow: ellipsis;">{{map.Name}}</button>
+                            		<button ng-if="!map" ng-click="createNewMap($parent.$parent.$index, $index)" class="btn btn-outline-secondary button-map-size" type="button">Empty</button>
+                            	</div>	                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- New map modal -->
+    <div ng-if="showNewMapModal" class="modal fade show" role="dialog" tabindex="-1" style="display: block;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create a new map</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form ng-submit="createNewMapFromModal()">
+                        <div class="form-group"><label>Map Name</label><input class="form-control" type="text" ng-model="newMapData.Name" required="" autofocus=""></div>
+                        <div class="btn-group pull-right" role="group"><button ng-click="closeNewMapModal()" class="btn btn-outline-danger button-right-space" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-outline-success" type="submit">Create</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<style>* 
+{padding: 0; margin: 0}
+
+@font-face {
+    font-family: "Pixeled";
+    src: url('../fonts/Pixeled.ttf') format("truetype");
+}
+
+.pixel-font {
+	font-family: "Pixeled", sans-serif !important;
+	font-smooth: never;
+	-webkit-font-smoothing : none;
+}
+
+.swal-text {
+			font-family: "Pixeled", sans-serif !important;
+	font-smooth: never;
+	-webkit-font-smoothing : none;
+}
+
+</style>

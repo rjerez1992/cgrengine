@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMOGameServer", "MMOGameServer\MMOGameServer.csproj", "{01925D17-6035-4992-B5F9-E3898009BDCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMOLoginServer", "MMOLoginServer\MMOLoginServer.csproj", "{4BDD75C4-A78A-4216-94CB-FA209FCD5A6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMOLibrary", "MMOLibrary\MMOLibrary.csproj", "{F2A66532-39FD-4307-A4DE-1C896E8646B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01925D17-6035-4992-B5F9-E3898009BDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01925D17-6035-4992-B5F9-E3898009BDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01925D17-6035-4992-B5F9-E3898009BDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01925D17-6035-4992-B5F9-E3898009BDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BDD75C4-A78A-4216-94CB-FA209FCD5A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BDD75C4-A78A-4216-94CB-FA209FCD5A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BDD75C4-A78A-4216-94CB-FA209FCD5A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BDD75C4-A78A-4216-94CB-FA209FCD5A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A66532-39FD-4307-A4DE-1C896E8646B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A66532-39FD-4307-A4DE-1C896E8646B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A66532-39FD-4307-A4DE-1C896E8646B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A66532-39FD-4307-A4DE-1C896E8646B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39026338-F45C-40FC-B02E-0BBFDAC7FCBE}
+	EndGlobalSection
+EndGlobal

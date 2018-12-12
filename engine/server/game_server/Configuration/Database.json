@@ -1,0 +1,5 @@
+{
+  "database": {
+    "connection-string": "Server=localhost\\SQLEXPRESS;Database=mmogame;Trusted_Connection=True;"
+  }
+}

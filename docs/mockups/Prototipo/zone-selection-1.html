@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGREDesign</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container d-flex h-100">
+        <div class="row flex-grow-1 justify-content-center align-self-center">
+            <div class="col-12 offset-0 align-items-center align-content-center align-self-center">
+                <h2>Zone selection<button class="btn btn-outline-primary pull-left button-right-space" type="button"><i class="fa fa-chevron-left"></i></button><button class="btn btn-outline-info pull-right" type="button"><i class="fa fa-plus"></i>&nbsp;new zone&nbsp;&nbsp;</button></h2>
+                <h6
+                    class="text-secondary">select edit zone to see the zone's maps</h6>
+                    <div class="max-heigh-w-scroll">
+                        <div class="card space-bottom-20px">
+                            <div class="card-body">
+                                <h4 class="text-primary card-title">Zone name<button class="btn btn-outline-danger pull-right" type="button"><i class="fa fa-times"></i>&nbsp;Delete</button><button class="btn btn-outline-success pull-right button-right-space" type="button"><i class="fa fa-pencil"></i>&nbsp;Edit</button></h4>
+                                <h6
+                                    class="text-muted card-subtitle mb-2"><i class="fa fa-key fa-fw"></i>&nbsp;ID: ABCDEFG - &nbsp;<i class="fa fa-arrows fa-fw"></i>&nbsp;Size: 65</h6>
+                            </div>
+                        </div>
+                        <div class="card space-bottom-20px">
+                            <div class="card-body">
+                                <h4 class="text-primary card-title">Zone name<button class="btn btn-outline-danger pull-right" type="button"><i class="fa fa-times"></i>&nbsp;Delete</button><button class="btn btn-outline-success pull-right button-right-space" type="button"><i class="fa fa-pencil"></i>&nbsp;Edit</button></h4>
+                                <h6
+                                    class="text-muted card-subtitle mb-2">Zone specific data</h6>
+                            </div>
+                        </div>
+                        <div class="card space-bottom-20px">
+                            <div class="card-body">
+                                <h4 class="text-primary card-title">Zone name<button class="btn btn-outline-danger pull-right" type="button"><i class="fa fa-times"></i>&nbsp;Delete</button><button class="btn btn-outline-success pull-right button-right-space" type="button"><i class="fa fa-pencil"></i>&nbsp;Edit</button></h4>
+                                <h6
+                                    class="text-muted card-subtitle mb-2">Zone specific data</h6>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create A new zone</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group"><label>Zone Name</label><input class="form-control" type="text" required="" autofocus="" inputmode="numeric"></div>
+                        <div class="form-group"><label>Zone Size</label><input class="form-control" type="number" required="" min="3" max="256"></div>
+                        <div class="btn-group pull-right" role="group"><button class="btn btn-outline-danger button-right-space" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-outline-success" type="submit">Create</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

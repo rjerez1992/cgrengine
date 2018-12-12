@@ -1,0 +1,26 @@
+<div ng-if="!creatingAccount" class="card" style="position: fixed; top:50%; left:50%;transform: translate(-50%, -50%);  z-index: 9;">
+    <div class="card-body" style="max-width: 300px;">
+        <h4 class="card-title pixel-font">Welcome!</h4>
+        <h6 class="text-muted card-subtitle mb-2 pixel-font">Please login</h6>
+        <form>
+            <div class="form-group"><label class="pixel-font">Username</label><input ng-model="loginData.username" class="form-control form-control-sm pixel-font" type="text"></div>
+            <div class="form-group"><label class="pixel-font">Password</label><input ng-model="loginData.password" class="form-control form-control-sm pixel-font" type="password"></div>
+            <div class="form-group"><button ng-click="doLogin()" class="btn btn-warning pull-right pixel-font" type="button">Sign in</button></div>
+            <div class="form-group"><button ng-click="toggleCreateAccount()" class="btn btn-dark pull-left pixel-font" type="button">Sign up</button></div>
+        </form>
+    </div>
+</div>
+
+<div ng-if="creatingAccount" class="card" style="position: fixed; top:50%; left:50%;transform: translate(-50%, -50%);  z-index: 9;">
+    <div class="card-body" style="max-width: 300px;">
+        <h4 class="card-title pixel-font">New account</h4>     
+        <form>
+            <div class="form-group"><label class="pixel-font">Username</label><input ng-model="newAccountData.username" class="form-control form-control-sm pixel-font" type="text"></div>
+            <div class="form-group"><label class="pixel-font">Password</label><input ng-model="newAccountData.password" class="form-control form-control-sm pixel-font" type="password"></div>
+            <div class="form-group"><label class="pixel-font">Email</label><input ng-model="newAccountData.email" class="form-control form-control-sm pixel-font" type="email"></div>
+            <div class="form-group"><button ng-click="createAccount()" class="btn btn-warning pull-right pixel-font" type="button">Sign up</button></div>
+            <div class="form-group"><button ng-click="toggleCreateAccount()" class="btn btn-dark pull-left pixel-font" type="button">Cancel</button></div>
+        </form>
+    </div>
+</div>
+

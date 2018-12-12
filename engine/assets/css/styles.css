@@ -1,0 +1,67 @@
+.top-space-20px {
+  margin-top:20px;
+}
+
+.icon-left-space {
+  margin-left:10px;
+}
+
+html, body {
+  height:100%;
+}
+
+.space-bottom-30px {
+  margin-bottom:30px;
+}
+
+.space-bottom-20px {
+  margin-bottom:20px;
+}
+
+.padding-top-20px {
+  padding-top:20px;
+}
+
+.padding-bottom-20px {
+  padding-bottom:20px;
+}
+
+.custom-login {
+  max-width:400px;
+}
+
+.max-heigh-w-scroll {
+  overflow-y:auto;
+  max-height:600px;
+}
+
+.max-heigh-w-scroll-500 {
+  overflow-y:auto;
+  max-height:500px;
+}
+
+.button-right-space {
+  margin-right:20px;
+}
+
+.max-heigh-width-w-scroll {
+  overflow-y:auto;
+  overflow-x:auto;
+  max-height:600px;
+  max-width:1100px;
+}
+
+.button-map-size {
+  height:100px;
+  width:150px;
+  min-width:150px;
+  max-width:150px;
+  min-height:100px;
+  max-height:100px;
+}
+
+.button-map-tile-size {
+  height:64px;
+  width:64px;
+}
+

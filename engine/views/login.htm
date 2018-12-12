@@ -1,0 +1,21 @@
+<div class="container d-flex h-100">
+    <div class="row flex-grow-1 justify-content-center align-self-center">
+        <div class="col-6 offset-0 align-items-center align-content-center align-self-center" style="max-width: 460px;">
+            <div class="card text-primary align-items-center align-content-center">
+                <div class="card-body" style="padding-top: 30px; padding-bottom: 30px;">
+                    <h2 class="card-title">
+                    <!--<i class="fa fa-fire fa-fw"></i> -->
+                    <img src="resources/logo.png" style="height: 32px; width: 32px; vertical-align: text-top;"> CGR Engine Editor</h2>
+                    <h5 class="text-muted card-subtitle mb-2">Login with your master account</h5>
+                    <h6 class="text-danger card-subtitle mb-2">Server requires to be in Edition MODE</h6>
+                    <form ng-submit="doLogin()">
+                        <div class="form-group padding-top-20px"><label>Game Server IP Address and Port</label><input ng-model="loginData.serverAddress" class="form-control" type="text"  maxlength="256"  value="127.0.0.1:51182"/></div>
+                        <div class="form-group"><label>Master Account Username</label><input class="form-control" type="text" maxlength="256"  autofocus="" ng-model="loginData.accountUsername"/></div>
+                        <div class="form-group padding-bottom-20px"><label>Master Account Password</label><input ng-model="loginData.accountPassword" class="form-control" type="password" maxlength="256"/></div>
+                    <button ng-hide="openningConnection" class="btn btn-outline-success btn-block" type="submit">Login to editor<i class="fa fa-sign-in icon-left-space"></i> </button>
+                    <button ng-show="openningConnection" class="btn btn-outline-success btn-block" type="submit">Connecting <i class="fa fa-spinner fa-spin icon-left-space"></i> </button>
+                </form></div>
+            </div>
+        </div>
+    </div>
+</div>

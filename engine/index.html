@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="CGREngineEditor">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGR Engine Editor</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="scripts/communication.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script> 
+    <script src="node_modules/mousetrap/mousetrap.js"></script> 
+    <script src="node_modules/pixi.js/dist/pixi.js"></script> 
+    <script src="scripts/custom.alert.js"></script>    
+    <script src="scripts/app.module.js"></script>
+    <script src="scripts/app.config.js"></script>
+    <script src="scripts/app.ui.js"></script> 
+    <script src="scripts/app.network.js"></script>  
+    <script src="scripts/login.controller.js"></script>
+    <script src="scripts/menu.controller.js"></script>
+    <script src="scripts/load.controller.js"></script>
+    <script src="scripts/zoneselection.controller.js"></script>
+    <script src="scripts/zoneedition.controller.js"></script>
+    <script src="scripts/mapedition.controller.js"></script>
+    <script src="scripts/resourcemanager.controller.js"></script>
+    <script src="scripts/classselection.controller.js"></script>
+</head>
+
+<style>
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0);
+    background-color:  rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar
+{
+    width: 7px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: rgba(0,0,0,0.3);
+    /*border: 2px solid #555555;*/
+}
+
+body { 
+  background: url("resources/pattern.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+</style>
+
+<body ng-view>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

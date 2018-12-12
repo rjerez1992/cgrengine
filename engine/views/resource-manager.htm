@@ -1,0 +1,133 @@
+<div ng-if="spriteSelection" class="container d-flex h-100">
+    <div class="row flex-grow-1 justify-content-center align-self-center">
+        <div class="col-12 offset-0 align-items-center align-content-center align-self-center">
+            <h2>Resource manager<button class="btn btn-primary pull-left button-right-space" type="button" go-click="/menu"><i class="fa fa-chevron-left"></i></button></h2>
+            <h6 class="text-primary">Select a type of resource to manage</h6>
+            <div class="max-heigh-w-scroll">
+                <div class="card space-bottom-20px">
+                    <div class="card-body">
+                        <h4 class="text-primary card-title"><i class="fa fa-map-o"></i>&nbsp;Mapping Sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" ng-click="switchToMapSpriteManager()"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                        <h6 class="text-muted card-subtitle mb-2">Map tiles go in here. Use 32x32 tiles to create your world</h6>
+                    </div>
+                </div>
+                <div class="card space-bottom-20px">
+                    <div class="card-body">
+                        <h4 class="text-primary card-title"><i class="fa fa-users"></i>&nbsp;Character sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" ng-click="switchToCharSpriteManager()"><i class="fa fa-pencil" ></i>&nbsp;Manage</button></h4>
+                        <h6 class="text-muted card-subtitle mb-2">To add anything from character to monster, click this.</h6>
+                    </div>
+                </div>
+                <div class="card space-bottom-20px">
+                    <div class="card-body">
+                        <h4 class="text-primary card-title"><i class="fa fa-fire"></i>&nbsp;Spell and effects sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                        <h6 class="text-muted card-subtitle mb-2">Don't like the look of your fireball? Change it here</h6>
+                    </div>
+                </div>
+                <div class="card space-bottom-20px">
+                    <div class="card-body">
+                        <h4 class="text-primary card-title"><i class="fa fa-hand-pointer-o"></i>&nbsp;UI sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                        <h6 class="text-muted card-subtitle mb-2">Splash screen, titles, dialogs... every aspect of the UI</h6>
+                    </div>
+                </div>
+                <div class="card space-bottom-20px">
+                    <div class="card-body">
+                        <h4 class="text-primary card-title"><i class="fa fa-music"></i>&nbsp;Music and SFX<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                        <h6 class="text-muted card-subtitle mb-2">What makes a good game a great game</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- map sprite stuff -->
+<div ng-if="mapSpriteManager" class="container d-flex h-100">
+        <div class="row flex-grow-1 justify-content-center align-self-center">
+            <div class="col-12 offset-0 align-items-center align-content-center align-self-center">
+                <h2>Map sprites<button ng-click="switchToSpriteSelection()" class="btn btn-primary pull-left button-right-space" type="button"><i class="fa fa-chevron-left"></i></button><button class="btn btn-info pull-right" type="button" ng-click="selectFiles()"><i class="fa fa-plus"></i>&nbsp;Add sprite(s)</button></h2>
+                <h6
+                    class="text-primary">Map sprites are tiles of 32x32 used to build the maps</h6>
+                    <div>
+                        <div class="card space-bottom-20px">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h5 class="text-left mb-2">Resources list</h5>
+                                        <div class="row max-heigh-w-scroll-500">
+                                            <div class="col">
+                                                <!-- Resource -->
+                                                <div ng-repeat="resource in $root.mapTextures" class="row" style="margin-bottom: 10px;">
+                                                    <div class="col-5">
+                                                        <h5 class="text-uppercase text-left text-muted mb-2" style="padding-top: 17px;"><i class="fa fa-picture-o"></i>&nbsp; Sprite #{{getNumberFromName(resource.baseTexture.imageUrl)}}</h5>
+                                                    </div>
+                                                    <div class="col"><button ng-click="removeResource(resource)" class="btn btn-outline-danger pull-right button-right-space" type="button"><i class="fa fa-times"></i>&nbsp;Remove</button><button ng-click="drawTextureOnPreview(resource)" class="btn btn-outline-info pull-right button-right-space" type="button"><i class="fa fa-eye"></i>&nbsp;View</button></div>
+                                                </div>
+                                                <!-- /Resource -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <h5 class="text-center text-primary mb-2">Resource preview<img ng-if="previewTexture" ng-src="{{previewTexture}}" class="align-items-center align-content-center align-self-center"  width="256" height="256" style="margin-top: 30px;"></h5>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- char sprite stuff -->
+<div ng-if="charSpriteManager" class="container d-flex h-100">
+        <div class="row flex-grow-1 justify-content-center align-self-center">
+            <div class="col-12 offset-0 align-items-center align-content-center align-self-center">
+                <h2>Char sprites<button ng-click="switchToSpriteSelection()" class="btn btn-primary pull-left button-right-space" type="button"><i class="fa fa-chevron-left"></i></button><button class="btn btn-info pull-right" type="button" ng-click="addCharacterSprite()"><i class="fa fa-plus"></i>&nbsp;Add sprite(s)</button></h2>
+                <h6
+                    class="text-primary">Chars require 9 different sprites</h6>
+                    <div>
+                        <div class="card space-bottom-20px">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="text-left mb-2">Resources list</h5>
+                                        <div class="row max-heigh-w-scroll-500">
+                                            <div class="col">
+                                                <!-- Resource -->
+                                                <div ng-repeat="resource in $root.charTextures" class="row" style="margin-bottom: 10px;">
+                                                    <div class=col-auto>
+                                                        <img ng-src="{{resource.textureCacheIds[0];}}" class="align-items-center align-content-center align-self-center"  width="48" height="48">
+                                                    </div>
+                                                    <div class="col-5">
+                                                        <h5 class="text-uppercase text-left text-muted mb-2" style="padding-top: 17px;"> {{getTextureNumber(resource)}}</h5>
+                                                    </div>
+                                                    <div class="col"><button ng-click="removeCharacterSprite(resource)" class="btn btn-outline-danger pull-right button-right-space" type="button"><i class="fa fa-times"></i>&nbsp;Remove</button></div>
+                                                </div>
+                                                <!-- /Resource -->
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+
+        img { 
+            image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+            image-rendering: -moz-crisp-edges;          /* Firefox                        */
+            image-rendering: -o-crisp-edges;            /* Opera                          */
+            image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+            image-rendering: pixelated; /* Chrome */
+            image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+            -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+        }
+    </style>

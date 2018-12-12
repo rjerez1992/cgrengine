@@ -1,0 +1,75 @@
+	<div ng-if="$root.displayToolbox" class="card" style="position: absolute;z-index: 100;right: 0%;left:0%">
+	    <div class="card-body" >
+	        <div class="dropdown pull-right">
+	        	<button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">
+	        		<i class="fa fa-navicon"></i>&nbsp; Layer: {{selectedLayerNames[selectedLayer]}}
+	        	</button>
+	            <div class="dropdown-menu dropdown-menu-right" role="menu"><a class="dropdown-item" role="presentation" ng-click="changeSelectedLayer(0)">Block&nbsp;</a><a class="dropdown-item" role="presentation" ng-click="changeSelectedLayer(1)">Floor</a><a class="dropdown-item" role="presentation" ng-click="changeSelectedLayer(2)">Ground/Wall</a><a class="dropdown-item" role="presentation"
+	                    ng-click="changeSelectedLayer(3)">Wall/Roof</a><a class="dropdown-item" role="presentation" ng-click="changeSelectedLayer(4)">Sky</a></div>
+	        </div>
+	        
+	        <!-- if preview mode is on -->
+	         <button ng-if="!isPreviewMode" ng-click="togglePreviewMode()" class="btn btn-outline-info pull-right button-right-space" type="button"><i class="fa fa-eye"></i> Preview mode</button>
+	        <button ng-if="isPreviewMode" ng-click="togglePreviewMode()" class="btn btn-outline-info active pull-right button-right-space" type="button"><i class="fa fa-eye"></i> Edition mode</button><button ng-click="cancelMapEdition()" class="btn btn-outline-danger" type="button">&nbsp;&nbsp;<i class="fa fa-chevron-left"></i> Cancel</button>
+	        <button ng-click="saveMapChanges()" class="btn btn-outline-success icon-left-space" type="button">Save changes &nbsp;&nbsp;<i class="fa fa-check"></i></button>
+        </div>
+	</div>
+
+	<div ng-if="$root.displayToolbox && selectedLayer!=0" class="card" style="position: absolute;z-index: 9;top:15%; bottom: 15%; right: 3%; max-width: 450px;">
+            <div class="card-body">
+                <div ng-if="!isDeleteMode" class="row">                	
+                    <div class="col-1 text-center"><img ng-if="selectedTextureNumber >0" ng-src="{{selectedTextureRoute}}" width="44" height="44" class="center"></div>
+                    <div class="col align-self-center">
+                        <h4 class="text-center text-muted mb-auto mb-2" style="padding: 0px; margin: 0px;">Selected</h4>
+                    </div>                   
+                </div>
+                <!-- Delete mode -->
+                <div ng-if="isDeleteMode" class="row">   
+               		 <div class="col-1 text-center"><img ng-if="selectedTextureNumber >0" src="resources/delete.png" width="44" height="44" class="center"></div>                  
+                    <div class="col align-self-center">
+                        <h4 class="text-center text-muted mb-auto mb-2" style="padding: 0px; margin: 0px;">Eraser</h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="row no-gutters justify-content-center">
+                	<div class="col-4 text-center"><button ng-click="toggleDeleteMode()" class="btn btn-outline-danger btn-block" type="button">Erase</button></div>
+                    <div class="col-4 text-center"><button ng-click="fillCurrentLayer()" class="btn btn-outline-info btn-block" type="button">Fill</button></div>
+                    <div class="col-4 text-center"><button ng-click="eraseCurrentLayer()" class="btn btn-outline-danger btn-block" type="button">Clear</button></div>
+                </div>
+                <hr>
+                <div style="max-height: 300px; overflow-y: auto;">
+
+                	<!-- Delete button -->                	           		
+                	<button ng-repeat="(key, value) in $root.mapTextures" ng-if="key!=0" ng-click="setSelectedTexture(key)" class="btn btn-outline-secondary" type="button" style="padding: 0px;"><img src="{{value.baseTexture.imageUrl}}" width="44" height="44" class="pull-left"></button>
+                	
+                
+                </div>
+            </div>
+        </div>
+
+    <div ng-if="$root.displayToolbox && selectedLayer==0" class="card" style="position: absolute;z-index: 9;top:14%;  right: 0%;">
+    	<div class="card-body">
+    		<h6 style="margin-bottom: 0px; padding-bottom: 0px;">Click on a title to block/unblock path</h6>
+    	</div>
+    </div>
+
+	<style type="text/css">
+		.transparent-card{
+			background-color: rgba(255, 255, 255, 0.7);
+			padding: -10px;
+			margin: 0px;  
+		}
+
+
+		img { 
+		    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+		    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+		    image-rendering: -o-crisp-edges;            /* Opera                          */
+		    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+		    image-rendering: pixelated; /* Chrome */
+		    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+		    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+		}
+	</style>
+

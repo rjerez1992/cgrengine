@@ -1,0 +1,9 @@
+{
+  "network": {
+    "server-ip": "127.0.0.1",
+    "server-port": "50182"
+  },
+  "database": {
+    "connection-string": "Server=localhost\\SQLEXPRESS;Database=mmogame;Trusted_Connection=True;"
+  }
+}

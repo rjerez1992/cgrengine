@@ -1,0 +1,11 @@
+.swal-modal {
+  /*background-color: rgba(63,255,106,0.69);*/
+  border: 3px solid white;
+  border-radius: 0px;
+}
+
+.swal-text {
+	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";	
+}
+
+

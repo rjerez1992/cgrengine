@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGREDesign</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container d-flex h-100">
+        <div class="row flex-grow-1 justify-content-center align-self-center">
+            <div class="col-12 offset-0 align-items-center align-content-center align-self-center">
+                <h2>Resource manager<button class="btn btn-outline-primary pull-left button-right-space" type="button"><i class="fa fa-chevron-left"></i></button></h2>
+                <h6 class="text-primary">Select a type of resource to manage</h6>
+                <div class="max-heigh-w-scroll">
+                    <div class="card space-bottom-20px">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title"><i class="fa fa-map-o"></i>&nbsp;Mapping Sprites<button class="btn btn-outline-success pull-right button-right-space" type="button"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                            <h6 class="text-muted card-subtitle mb-2">Map tiles go in here. Use 32x32 tiles to create your world</h6>
+                        </div>
+                    </div>
+                    <div class="card space-bottom-20px">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title"><i class="fa fa-users"></i>&nbsp;Character sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                            <h6 class="text-muted card-subtitle mb-2">To add anything from character to monster, click this.</h6>
+                        </div>
+                    </div>
+                    <div class="card space-bottom-20px">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title"><i class="fa fa-fire"></i>&nbsp;Spell and effects sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                            <h6 class="text-muted card-subtitle mb-2">Don't like the look of your fireball? Change it here</h6>
+                        </div>
+                    </div>
+                    <div class="card space-bottom-20px">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title"><i class="fa fa-hand-pointer-o"></i>&nbsp;UI sprites<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                            <h6 class="text-muted card-subtitle mb-2">Splash screen, titles, dialogs... every aspect of the UI</h6>
+                        </div>
+                    </div>
+                    <div class="card space-bottom-20px">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title"><i class="fa fa-music"></i>&nbsp;Music and SFX<button class="btn btn-outline-success pull-right button-right-space" type="button" disabled="disabled"><i class="fa fa-pencil"></i>&nbsp;Manage</button></h4>
+                            <h6 class="text-muted card-subtitle mb-2">What makes a good game a great game</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create A new zone</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group"><label>Zone Name</label><input class="form-control" type="text" required="" autofocus="" inputmode="numeric"></div>
+                        <div class="form-group"><label>Zone Size</label><input class="form-control" type="number" required="" min="3" max="256"></div>
+                        <div class="btn-group pull-right" role="group"><button class="btn btn-outline-danger button-right-space" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-outline-success" type="submit">Create</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<div ng-if="!fetchingData && !creatingCharacter" class="card" style="position: fixed; top:50%; left:50%;transform: translate(-50%, -50%);  z-index: 9;">
+    <div class="card-body" style="max-width: 300px;">
+        <h4 class="card-title pixel-font">Characters</h4>
+        <h6 class="text-muted card-subtitle mb-2 pixel-font">Select a character</h6>
+        <hr>
+        <form>
+
+            <p ng-if="$root.currentAccount.Characters.length < 1" class="pixel-font" style="margin-top: 20px;">You don't have any characters created</p>
+
+            <div ng-if="$root.currentAccount.Characters.length >= 1" >
+                <div class="row" ng-repeat="chr in $root.currentAccount.Characters">
+
+                    <div class="col-5 mx-auto text-center">
+                        <img ng-src="{{getCharImageRoute(chr.Class.SpriteName)}}" class="" style="margin: 10px;" width="50"  height="50">
+                    </div>                
+                    <div class="col-7 align-self-center">
+                        <h6 class="pixel-font text-center">{{chr.Name}}</h6>
+                        <h6 class="pixel-font text-center">{{chr.Class.Name}}</h6>
+                    </div>
+                    
+                        <div class="col-6">
+                            <button ng-click="selectCharacter(chr)" style="margin-top: 5px;" class="btn btn-warning btn-block  pixel-font" type="button">Select</button>
+                        </div>
+                        <div class="col-6">
+                            <button ng-click="deleteCharacter(chr)" style="margin-top: 5px;" class="btn btn-danger btn-block pixel-font" type="button">Delete</button>
+                        </div>
+                
+                </div>
+            </div>
+           
+
+      
+            <button ng-click="createCharacter()" style="margin-top: 20px;" class="btn btn-warning btn-block pull-right pixel-font" type="button">Create character</button>
+            <button ng-click="signOut()" style="margin-top: 10px;" class="btn btn-dark btn-block pull-right pixel-font" type="button">Sign out</button>
+        </form>
+    </div>
+</div>
+
+<div ng-if="creatingCharacter" class="card" style="position: fixed; top:50%; left:50%;transform: translate(-50%, -50%);  z-index: 9;">
+    <div class="card-body" style="max-width: 600px; width: 500px;">
+        <h4 class="card-title pixel-font">Character creation</h4>
+        <hr>
+        <form>
+             <div class="row">
+                <div class="col-auto align-self-center">
+                    <h6 class="pixel-font" >Character name: </h6>
+                </div>
+                <div class="col">
+                    <input ng-model="createCharacter.charName" class="form-control pixel-font" type="text">                  
+                </div>
+            </div>
+            <hr>
+        	<!-- Class dropdown -->
+        	<div class="dropdown pull-right"><button class="btn btn-danger dropdown-toggle pixel-font" data-toggle="dropdown" aria-expanded="false" type="button">Change</button>
+		        <!-- Class -->
+		        <div class="dropdown-menu" role="menu"><a ng-repeat="c in classes" class="dropdown-item pixel-font" role="presentation" ng-click="changeClass(c)">{{c.Name}}</a></div>
+		    </div>
+            <h6 class="text-muted card-subtitle mb-2 pixel-font">Class: <strong> {{selectedClass.Name}} </strong></h6>
+           	
+           	<h6 class="text-muted card-subtitle mb-2 pixel-font">Health: <strong>{{selectedClass.Health}}</strong></h6>   
+
+            <h6 class="text-muted card-subtitle mb-2 pixel-font">Resource: <strong>{{selectedClass.Resource}}</strong></h6>  
+
+            <div class="row">
+                <div class="col-auto mx-auto text-center"><img ng-src="{{classImage}}" class="" style="margin: 10px;" width="100" height="100"></div>
+                <div class="col align-self-center">
+                    <p class="pixel-font text-justify">{{selectedClass.Description}}</p>                    
+                </div>
+            </div>
+            
+     
+            <!-- buttons -->
+            <hr>
+            <button style="margin-top: 5px;" ng-click="createCharacterSubmit()" class="btn btn-warning  pull-right pixel-font" type="button">Create</button>
+            <button ng-click="cancelCreateaCharacter()" style="margin-top: 5px; margin-right: 10px;" class="btn btn-dark  pull-right pixel-font" type="button">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- Temporal loading -->
+<div ng-if="fetchingData">
+	<div class="card" style="position: fixed; top:50%; left:50%;transform: translate(-50%, -50%);  z-index: 9;">
+        <div class="card-body" style="max-width: 300px;">
+            <h4 class="card-title pixel-font">Fetching data</h4>
+            <h6 class="text-muted card-subtitle mb-2 pixel-font">Please wait</h6>        
+        </div>
+    </div>
+</div>
+
+
+
+ <style type="text/css">
+
+        img { 
+            image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+            image-rendering: -moz-crisp-edges;          /* Firefox                        */
+            image-rendering: -o-crisp-edges;            /* Opera                          */
+            image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+            image-rendering: pixelated; /* Chrome */
+            image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+            -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+        }
+    </style>

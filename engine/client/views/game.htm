@@ -1,0 +1,61 @@
+<!-- Chat bar -->
+<div style="width: 400px; position: fixed; left: 1%; bottom: 1%; z-index: 9">
+    <div class="card" style="background-color: rgba(245, 245, 245, 0.6);">
+        <div class="card-body" id="gameChatBox" style="padding: 5px !important; overflow-y: auto; max-height: 150px; height: 150px;">
+            <p class="card-text pixel-font" style="margin: 0px; word-wrap: break-word; white-space: pre-wrap;">{{chatText}}</p>
+        </div>
+    </div>
+    <div class="input-group input-group-sm" style="margin-top: 5px !important; z-index: 999;"><input class="form-control pixel-font" type="text" placeholder="Say something..." ng-model="messageModel.message">
+        <div class="input-group-append"><button ng-click="sendChatMessage()" class="btn btn-warning pull-left pixel-font" type="button">Send</button></div>
+    </div>
+</div>
+
+<!-- Menu -->
+<div ng-if="isMenuOpen" style="width: 15%; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);  z-index: 9;">
+        <div class="card">
+            <div class="card-body" style="padding: 10px !important;">
+                <h5 class="text-center pixel-font">Menu</h5>
+                <div class="row">
+                    <div class="col"><button class="btn btn-outline-warning btn-block pixel-font" disabled="disabled" type="button">Options</button></div>
+                </div>
+                <div class="row" style="margin-top: 5px;">
+                    <div class="col"><button ng-click="doLogout()" class="btn btn-outline-warning btn-block pixel-font" type="button">Logout</button></div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col"><button ng-click="toggleMenu()" class="btn btn-dark btn-block pixel-font" type="button">Close</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Menu open button -->
+<div style="max-width: 400px; position: fixed; top: 1%; right: 1%; z-index: 9;"><button ng-click="toggleMenu()" class="btn btn-warning btn-block pixel-font" type="button">Menu</button></div>
+
+<!-- Map name -->
+<div style="max-width: 400px; position: fixed; top: 1%; left: 50%; transform: translate(-50%, 0%);  z-index: 9;">
+    <h3 class="text-center pixel-font">{{titleText}}</h3>
+    FPS {{currentFPSValue}}
+</div>
+
+
+
+<!-- Character stats -->
+<div class="card" style="width:250px; max-width: 400px; position: fixed; top: 1%; left: 1%; z-index: 9;">
+        <div class="card-body" style="padding: 10px !important;">
+            <div class="row">
+                <div class="col-6">
+                    <h6 class="pixel-font" style="margin-bottom: 0px;">{{$root.selectedCharacter.Name}}</h6>
+                </div>
+                <div class="col-6">
+                    <h6 class="text-right text-muted pixel-font" style="margin-bottom: 0px;">{{$root.selectedCharacter.Class.Name}}</h6>
+                </div>
+            </div>
+            <div class="progress" style="margin-top: 10px;">
+                <div id="healthBar" class="progress-bar bg-danger progress-bar-striped pixel-font" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">{{$root.selectedCharacter.CurrentHealth}}</div>
+            </div>
+            <div class="progress" style="margin-top: 5px;">
+                <div id="resourceBar" class="progress-bar bg-info progress-bar-striped pixel-font" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 100%">{{$root.selectedCharacter.CurrentResource}}</div>
+            </div>
+        </div>
+    </div>
